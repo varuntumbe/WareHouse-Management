@@ -46,8 +46,8 @@ const CanvasComponent = (props) => {
 
   return (
     <Stage
-      width={props.state.height}
-      height={props.state.width}
+      width={props.state.width}
+      height={props.state.height}
       style={{
         backgroundColor: 'rgb(29, 52, 117)',
         borderRadius: '15px',

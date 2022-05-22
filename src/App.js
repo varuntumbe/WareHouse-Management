@@ -33,8 +33,10 @@ class App extends React.Component {
       isCreatingWarehouseBorder: true,
     };
 
+
     //keeping track of all the shapes on which double click has been happened to delete in future when delete key is pressed
     this.selectedShapeIdsToDelete = [];
+
 
     //write a function which looks whether any stored outerWarehouse object available or not
 
@@ -52,6 +54,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.update();
+
     document.addEventListener('keydown', this.handleDelete, false);
   }
 
@@ -61,9 +64,10 @@ class App extends React.Component {
   }
 
   update = () => {
+    console.log(window.innerWidth);
     this.setState({
       height: window.innerHeight,
-      width: window.innerWidth,
+      width: window.innerWidth-115,
     });
   };
 
@@ -275,8 +279,24 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='wrap'>
-        <div></div>
+      <>
+        <div className='wrap'>
+
+          <div  className='floatleft'>
+            <CanvasComponent
+              state={this.state}
+              handleDragStart={this.handleDragStart}
+              handleDragEnd={this.handleDragEnd}
+              handleDoubleClick={this.handleDoubleClick}
+            />
+          </div>
+          <div className='floatright'>
+            <MenuCompponent
+              handleSave={this.handleSave}
+              showModalView={this.showModalView}
+            />
+          </div>
+        </div>
 
         <ModalComponent
           callbackFn={this.createShapeOnCanvas}
@@ -284,21 +304,7 @@ class App extends React.Component {
           isModalVisible={this.state.isModalVisible}
           isCreatingWareHouse={this.state.isCreatingWarehouseBorder}
         />
-        <div className='floatleft'>
-          <CanvasComponent
-            state={this.state}
-            handleDragStart={this.handleDragStart}
-            handleDragEnd={this.handleDragEnd}
-            handleDoubleClick={this.handleDoubleClick}
-          />
-        </div>
-        <div className='floatright'>
-          <MenuCompponent
-            handleSave={this.handleSave}
-            showModalView={this.showModalView}
-          />
-        </div>
-      </div>
+      </>
     );
   }
 }
