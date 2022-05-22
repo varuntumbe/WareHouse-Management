@@ -14,9 +14,16 @@ code {
 
 .wrap {
   display: flex;
-
 }
 
 .floatleft {
   flex:0.8;
+}
+
+
+.floatright{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height:100vh;
 }

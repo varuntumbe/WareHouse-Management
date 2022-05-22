@@ -1,8 +1,11 @@
 import { ButtonGroup, Button } from "@material-ui/core";
+import "./MenuComponent.css";
+
+
 const MenuCompponent = (props) => {
   return (
-    <div>
       <ButtonGroup
+      className="button_holder"
         variant="contained"
         aria-label="outlined primary button group"
         orientation="vertical"
@@ -30,7 +33,6 @@ const MenuCompponent = (props) => {
         </Button>
         <Button onClick={props.handleSave}>Save</Button>
       </ButtonGroup>
-    </div>
   );
 };
 

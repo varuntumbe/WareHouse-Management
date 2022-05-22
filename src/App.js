@@ -290,12 +290,10 @@ class App extends React.Component {
               handleDoubleClick={this.handleDoubleClick}
             />
           </div>
-          <div className='floatright'>
             <MenuCompponent
               handleSave={this.handleSave}
               showModalView={this.showModalView}
             />
-          </div>
         </div>
 
         <ModalComponent
