@@ -13,18 +13,17 @@ code {
 }
 
 .wrap {
-  width: 100%;
+  display: flex;
 }
 
 .floatleft {
-  float: left;
-  width: 80%;
-  height: 100%;
+  flex:0.8;
 }
 
-.floatright {
-  float: right;
 
-  height: 100%;
-  width: 20%;
+.floatright{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height:100vh;
 }
